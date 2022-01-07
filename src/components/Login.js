@@ -15,10 +15,13 @@ const Login = ({ setPageState }) => {
         <button className="btn-primary" type="submit" onClick={login}>
           Login
         </button>
+        <button className="text-xs hover:text-blue-500 text-right underline">
+          Forgot password?
+        </button>
         <small className="text-center pt-5">
           Don't have an account?
           <button
-            className="text-blue-500 ml-3"
+            className="text-blue-500 ml-2"
             onClick={() => setPageState("signup")}
           >
             Sign up
