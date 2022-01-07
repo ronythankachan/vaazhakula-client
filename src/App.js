@@ -1,7 +1,11 @@
 import "./App.css";
+import AuthPage from "./pages/AuthPage";
 
 function App() {
-  return <h1 className="bg-blue-500"> Hello world! </h1>;
+  return (
+    <main>
+      <AuthPage />
+    </main>
+  );
 }
-
 export default App;
