@@ -4,12 +4,12 @@ import Signup from "../components/Signup";
 
 const AuthPage = () => {
   const [pageState, setPageState] = useState("login");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className="w-screen min-h-screen flex justify-center md:items-center">
-      {pageState === "login" ? (
-        <Login setPageState={setPageState} />
+      {!loggedIn && pageState === "login" ? (
+        <Login setPageState={setPageState} setLoggedIn={setLoggedIn} />
       ) : (
         <Signup setPageState={setPageState} />
       )}
