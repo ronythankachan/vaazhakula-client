@@ -8,6 +8,17 @@ const Signup = ({ setPageState }) => {
       <form className="flex flex-col space-y-4">
         <input className="input-text" type="text" placeholder="Full Name" />
         <input className="input-text" type="email" placeholder="E-mail" />
+        <div className="flex items-center space-x-2 ">
+          <div className="text-gray-400 border p-3 rounded-md bg-gray-100">
+            +91
+          </div>
+          <input
+            className="input-text w-full"
+            type="number"
+            placeholder="Phone number"
+          />
+        </div>
+
         <input
           className="input-text"
           type="password"
