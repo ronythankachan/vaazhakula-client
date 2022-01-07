@@ -1,16 +1,44 @@
+import { useState } from "react";
+import server from "../axios";
+
 const Login = ({ setPageState }) => {
-  const login = (e) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const login = async (e) => {
     e.preventDefault();
+    console.log(formData);
+    try {
+      const auth = await server.post("/auth/login", formData);
+      localStorage.setItem("accessToken", auth.data.accessToken);
+      localStorage.setItem("refreshToken", auth.data.refreshToken);
+      alert("Logged in successfully");
+    } catch (err) {
+      alert(err.response.data.message);
+    }
   };
   return (
     <div className="w-96 bg-white md:shadow-md rounded-md p-6 space-y-10 m-2">
       <h1 className="font-bold text-4xl text-center">Login</h1>
       <form className="flex flex-col space-y-4">
-        <input className="input-text" type="text" placeholder="Enter e-mail" />
+        <input
+          className="input-text"
+          type="text"
+          placeholder="Enter e-mail"
+          name="email"
+          onChange={handleChange}
+        />
         <input
           className="input-text"
           type="password"
           placeholder="Enter password"
+          name="password"
+          onChange={handleChange}
         />
         <button className="btn-primary" type="submit" onClick={login}>
           Login

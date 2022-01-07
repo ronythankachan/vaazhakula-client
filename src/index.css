@@ -6,7 +6,7 @@
   @apply border rounded-md ring-0 p-3 focus:outline-none focus:border focus:border-gray-500;
 }
 .btn-primary {
-  @apply bg-none font-semibold ring-2 py-3 ring-black ring-offset-2 m-1 hover:bg-gray-100 hover:text-gray-400 focus-visible:bg-gray-100 outline-none;
+  @apply bg-none font-semibold ring-2 py-3 ring-black ring-offset-2 m-1 hover:bg-gray-100 hover:text-gray-400 focus-visible:bg-gray-100 outline-none rounded-sm;
 }
 body {
   margin: 0;
