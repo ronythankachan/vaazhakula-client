@@ -6,6 +6,23 @@ const Login = ({ setPageState }) => {
     email: "",
     password: "",
   });
+  //   useEffect(() => {
+  //     async function checkAuth() {
+  //       const accessToken = localStorage.getItem("accessToken");
+  //       try {
+  //         await server.post("/auth/authenticate", { accessToken });
+  //       } catch (err) {
+  //         const refreshToken = localStorage.getItem("refreshToken");
+  //         try {
+  //           await server.post("/auth/token", { refreshToken });
+  //           alert("Already logged in");
+  //         } catch (err) {
+  //           alert("invalid user");
+  //         }
+  //       }
+  //     }
+  //     checkAuth();
+  //   }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
